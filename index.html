@@ -6,27 +6,10 @@
   <title>Hyperglide</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
-  <style>
-    /* Sadece Hero bölümü için arka plan resmi stili */
-    .hero-bg {
-      background-image: url('örnek resim.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .hero-bg::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6); /* Metnin daha okunur olması için karartma */
-    }
-  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
+  <!-- Header -->
   <header class="fixed w-full bg-gray-950 bg-opacity-90 z-50 shadow-lg">
     <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-extrabold text-cyan-400">Hyperglide</h1>
@@ -41,55 +24,74 @@
     </nav>
   </header>
 
-  <section id="home" class="h-screen flex items-center justify-center text-center hero-bg">
-    <div class="relative z-10">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">ADAPT. DOMINATE. <span class="text-cyan-400">HYPERGLIDE</span>.</h2>
-        <p class="text-3xl mb-6 text-gray-400">Modüler, özelleştirilebilir RGB gaming mouse ile performansınızı bir üst seviyeye taşıyın.</p>
-        <a href="#video-section" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-lg transition">Ürünleri Keşfet</a>
+  <!-- HERO -->
+  <section id="home" 
+    class="h-screen flex flex-col justify-center items-center text-center 
+    bg-[url('images/örnek-resim.jpg')] bg-cover bg-center bg-no-repeat 
+    relative">
+
+    <!-- Arka planın üzerine siyah transparan katman -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- İçerik -->
+    <div class="relative z-10 px-4">
+      <h2 class="text-5xl md:text-7xl font-extrabold mb-6 text-white">
+        ADAPT. DOMINATE. <span class="text-cyan-400">HYPERGLIDE</span>.
+      </h2>
+      <p class="max-w-2xl mb-8 text-lg text-gray-300">
+        Modüler, özelleştirilebilir RGB gaming mouse ile performansınızı bir üst seviyeye taşıyın.
+      </p>
+      <a href="#video-section" 
+        class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-lg transition">
+        Ürünleri Keşfet
+      </a>
     </div>
   </section>
 
+  <!-- Video Section -->
   <section id="video-section" class="relative w-full bg-black">
     <div class="max-w-6xl mx-auto px-4 py-16 text-center">
       <h3 class="text-3xl font-bold mb-6 text-cyan-400">Hyperglide Deneyimini İzle</h3>
       <p class="mb-8 text-gray-300">Gerçek oyun ortamında performans ve RGB gücünü görün.</p>
       
       <video controls class="w-full rounded-lg shadow-lg">
-        <source src="./videos/mause-model-video.mp4" type="video/mp4">
+        <source src="videos/hyperglide.mp4" type="video/mp4">
         Tarayıcınız bu videoyu desteklemiyor.
       </video>
     </div>
   </section>
 
+  <!-- Features -->
   <section id="features" class="py-20 bg-gray-900 text-center">
     <div class="max-w-6xl mx-auto px-4">
         <h3 class="text-4xl font-bold mb-12">Özellikler ve Modüler Yapı</h3>
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-                <img src="./images/siyah-versyon-parçaları.jpg" alt="Siyah Versiyon Parçaları" class="rounded-lg shadow-lg">
+                <img src="siyah versyon parçaları.jpg" alt="Siyah Versiyon Parçaları" class="rounded-lg shadow-lg">
             </div>
             <div>
-                <img src="./images/beyaz-versyon-parçaları.jpg" alt="Beyaz Versiyon Parçaları" class="rounded-lg shadow-lg">
+                <img src="beyaz versyon parçaları.jpg" alt="Beyaz Versiyon Parçaları" class="rounded-lg shadow-lg">
             </div>
         </div>
         <p class="mt-8 text-lg text-gray-300">Hyperglide, oyunculara maksimum özelleştirme imkanı sunar. Değiştirilebilir parçalarla her oyuncu kendi konforuna ve oyun stiline en uygun fareyi tasarlayabilir.</p>
     </div>
   </section>
 
+  <!-- Products -->
   <section id="products" class="py-20 bg-gray-950">
     <div class="max-w-6xl mx-auto text-center">
       <h3 class="text-4xl font-bold mb-12">Öne Çıkan Ürünler</h3>
       <div class="grid md:grid-cols-2 gap-8">
         
         <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-          <img src="./images/siyah-versyon.jpg" alt="Hyperglide Mouse Siyah" class="mx-auto mb-4">
+          <img src="sadece kırmızı mouse.jpg" alt="Hyperglide Mouse Siyah" class="mx-auto mb-4">
           <h4 class="text-xl font-semibold">Hyperglide Mouse</h4>
           <p class="text-gray-400 mb-4">Siyah Versiyon – RGB ışıklandırma, ultra hafif tasarım.</p>
           <a href="#" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-lg transition">Satın Al</a>
         </div>
 
         <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-          <img src="./images/beyaz-versyon.jpg" alt="Hyperglide Mouse Beyaz" class="mx-auto mb-4">
+          <img src="beyaz versyon.jpg" alt="Hyperglide Mouse Beyaz" class="mx-auto mb-4">
           <h4 class="text-xl font-semibold">Hyperglide Mouse</h4>
           <p class="text-gray-400 mb-4">Beyaz Versiyon – RGB ışıklandırma, ultra hafif tasarım.</p>
           <a href="#" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-lg transition">Satın Al</a>
@@ -99,6 +101,7 @@
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="py-20 bg-gray-900">
     <div class="max-w-5xl mx-auto text-center">
       <h3 class="text-4xl font-bold mb-8">Hakkımızda</h3>
@@ -106,6 +109,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="py-20 bg-gray-950">
     <div class="max-w-5xl mx-auto text-center">
       <h3 class="text-4xl font-bold mb-8">İletişim</h3>
@@ -129,6 +133,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-gray-950 py-6 text-center text-gray-500 text-sm">
     © 2025 Hyperglide. Tüm hakları saklıdır.
   </footer>
@@ -138,6 +143,4 @@
   </script>
 
 </body>
-
 </html>
-
